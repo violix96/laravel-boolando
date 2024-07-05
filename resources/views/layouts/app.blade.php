@@ -12,7 +12,9 @@
 
 <body>
     @include('layouts.shared.header')
-    <main>main</main>
+
+    @yield('content')
+
     @include('layouts.shared.footer')
 
 </body>
