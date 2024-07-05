@@ -1,5 +1,29 @@
 @extends('layouts.app')
 
+@php
+    function calcola_prezzo_scontato($price, $badges)
+    {
+        $discount = null;
+
+        foreach ($badges as $badge) {
+            if ($badge['type'] === 'discount') {
+                $discount = $badge['value'];
+                $discount = str_replace('-', '', $discount);
+                $discount = (int) str_replace('%', '', $discount);
+            }
+        }
+        if ($discount !== null && $discount > 0) {
+            $discountedPrice = $price * (1 - $discount / 100);
+            $discountedPrice = number_format(floor($discountedPrice * 100) / 100, 2);
+            return $discountedPrice;
+        } else {
+            return number_format($price, 2);
+        }
+    }
+@endphp
+
+
+
 @section('content')
     <main>
         <div class="container mt-5">
@@ -27,14 +51,17 @@
                             </div>
                             <p>{{ $product['brand'] }}</p>
                             <h4>{{ $product['name'] }}</h4>
-                            <span class="prezzo-ora">{{ $product['price'] }} &euro;</span>
-                            <span class="prezzo-prima">
-                                @foreach ($product['badges'] as $badge)
-                                    @if ($badge['type'] == 'discount')
-                                        {{ $badge['value'] }}
-                                    @endif
-                                @endforeach
-                            </span>
+                            <div>
+                                <span>
+                                    {{ calcola_prezzo_scontato($product['price'], $product['badges']) }} &euro;
+                                    {{-- mostra il prezzo scontato --}}
+                                </span>
+                                @if (calcola_prezzo_scontato($product['price'], $product['badges']) !== $product['price'])
+                                    <span class="discount-txt">{{ number_format($product['price'], 2) }} &euro;</span>
+                                    {{-- mostra il prezzo originale con sconto --}}
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                 @endforeach
