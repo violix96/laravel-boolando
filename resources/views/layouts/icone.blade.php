@@ -2,17 +2,17 @@
     <ul>
         <li>
             <a href="">
-                < <img src="{{ Vite::asset('resources/img/like--v1.png') }}" alt="Logo">
+                <img class="icon" src="{{ Vite::asset('resources/img/like--v1.png') }}" alt="Logo">
             </a>
         </li>
         <li>
             <a href="">
-                < <img src="{{ Vite::asset('resources/img/shopping-bag.png') }}" alt="bag">
+                <img class="icon" src="{{ Vite::asset('resources/img/shopping-bag.png') }}" alt="bag">
             </a>
         </li>
         <li>
             <a href="">
-                < <img src="{{ Vite::asset('resources/img/user.png') }}" alt="user">
+                <img class="icon" src="{{ Vite::asset('resources/img/user.png') }}" alt="user">
             </a>
         </li>
     </ul>
