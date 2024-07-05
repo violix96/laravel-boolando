@@ -1,6 +1,242 @@
 /*resources/scss/app.scss*/
 @import "~bootstrap/scss/bootstrap";
 
-body {
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    padding: 15px 0px;
+    background-color: orangered;
+    width: 100%;
+    z-index: 1;
+
+}
+
+.logo-user {
+    width: 20px;
+}
+
+footer {
+    padding: 15px 0px;
+    background-color: black;
+    margin-top: 50px;
+    /* height: 150px; */
+
+}
+
+
+main {
+    padding-top: 200px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-25 {
+    width: 25%;
+    /* height: 40px;
+    border: 1px solid black; */
+    padding: 8px 0px;
+}
+
+.col-50 {
+    width: 50%;
+    /* height: 40px; */
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+
+}
+
+.col-33 {
+    width: calc(100% / 3 - 20px);
+    margin: 10px;
+    /* border: 1px solid black */
+}
+
+.col-100 {
+    width: 100%;
+    height: 50px;
+    /* margin: 20px 0px; */
+}
+
+.my-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content {
+    /* height: 300px; */
+    position: relative;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blueviolet {
+    background-color: blueviolet;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.px {
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+.align-items-centre {
+    align-items: center;
+}
+
+.justify-centre {
+    justify-content: center;
+}
+
+.py-20 {
+    padding: 20px 0px;
+
+}
+
+.space-beetween {
+    justify-content: space-between;
+}
+
+.sconti-label {
+    width: 50px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    display: inline-block;
+    bottom: 50px;
+    left: 1px;
+}
+
+.sostenibilità-label {
+    width: 100px;
+    text-align: center;
+    color: white;
+    background-color: green;
+    display: inline-block;
+    bottom: 50px;
+    left: 55px;
+}
+
+.content:hover .main-img {
+    display: none
+}
+
+.content:hover .hover-img {
+    display: inline-block;
+}
+
+.hover-img {
+    display: none;
+}
+
+.logo {
+    width: 150px;
+    display: flex;
+}
+
+.text-center {
+    text-align: center;
+}
+
+ul li {
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+}
+
+.prezzo-ora {
+    color: red;
+    font-weight: bold;
+}
+
+.prezzo-prima {
+    text-decoration: line-through;
+    font-weight: bold;
+
+}
+
+.cuoricino {
+    position: absolute;
+    top: 5px;
+    right: 0px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.cuoricino-hover {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: red;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.cuoricino-hover {
+    display: none;
+}
+
+.content-like:hover .cuoricino {
+    display: none
+}
+
+.content-like:hover .cuoricino-hover {
+    display: inline-block;
+}
+
+h6 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
