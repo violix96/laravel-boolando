@@ -52,7 +52,7 @@
                             <p>{{ $product['brand'] }}</p>
                             <h4>{{ $product['name'] }}</h4>
                             <div>
-                                <span>
+                                <span class="prezzo-ora">
                                     {{ calcola_prezzo_scontato($product['price'], $product['badges']) }} &euro;
                                     {{-- mostra il prezzo scontato --}}
                                 </span>
